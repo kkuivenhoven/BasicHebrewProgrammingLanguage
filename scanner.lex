@@ -18,6 +18,8 @@
 "/"						{ return DIV; }
 ";"						{ return SEMI; }
 "="						{ return ASSIGN; }
+"^"						{ return POW; }
+[-]\d					{ return NEG; }
 [\t\r\n\f]    ; /*	ignore whitespace */
 
 %%

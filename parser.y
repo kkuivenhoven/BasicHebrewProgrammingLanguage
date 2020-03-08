@@ -2,6 +2,7 @@
 	#include <iostream>
 	#include <string>
 	#include <locale.h>
+	#include <math.h>
 
 	using namespace std;
 	extern "C" void yyerror(const char *s);
@@ -51,6 +52,8 @@
 %type <stringVal> string_statement
 %left PLUS MINUS
 %left MULT DIV
+%right POW
+%left NEG
 
 %%  
 program:
@@ -62,12 +65,14 @@ program:
 statement: exp SEMI
 
 exp:
-	INTEGER_LITERAL { $$ = $1; }
-	| FLOAT_LITERAL { $$ = $1; }
-	| exp PLUS exp { $$ = $1 + $3; }
-  | exp MINUS exp { $$ = $1 - $3; }
-	| exp MULT exp { $$ = $1 * $3; }
-	| exp DIV exp { $$ = $1 / $3; }
+	INTEGER_LITERAL		 		{ $$ = $1; }
+	| FLOAT_LITERAL		 		{ $$ = $1; }
+	| exp PLUS exp 				{ $$ = $1 + $3; }
+  | exp MINUS exp		 		{ $$ = $1 - $3; }
+	| exp MULT exp 				{ $$ = $1 * $3; }
+	| exp DIV exp 				{ $$ = $1 / $3; }
+	| MINUS exp %prec NEG { $$ = -$2; }
+	| exp POW exp 				{ $$ = pow($1,$3); }
 	;
 
 
