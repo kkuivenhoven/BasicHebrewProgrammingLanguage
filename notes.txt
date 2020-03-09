@@ -1,2 +1,10 @@
 
+[\u05E7\u05D5]       { yylval.stringVal = yytext; return STRING_DEC; }
 [a-z\u05D0-\u05EA]
+
+
+[^\b\u05D5][\u05E7\b]
+
+
+%token STRING_DEC 
+  | STRING_LITERAL ASSIGN STRING_LITERAL STRING_DEC { $$ = $3; }

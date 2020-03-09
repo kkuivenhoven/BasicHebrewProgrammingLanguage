@@ -80,5 +80,5 @@ string_statement: str SEMI
 
 str:
 	STRING_LITERAL { $$ = $1; }
-	| str ASSIGN STRING_LITERAL { $$ = $3; }
+	| STRING_LITERAL ASSIGN str { $$ = $3; }
 	;

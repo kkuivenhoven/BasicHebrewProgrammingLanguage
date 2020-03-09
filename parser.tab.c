@@ -386,7 +386,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  2
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   29
+#define YYLAST   27
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  14
@@ -452,7 +452,7 @@ static const yytype_int8 yyrhs[] =
       17,     7,    -1,     4,    -1,     5,    -1,    17,     9,    17,
       -1,    17,     8,    17,    -1,    17,    11,    17,    -1,    17,
       10,    17,    -1,     8,    17,    -1,    17,    12,    17,    -1,
-      19,     7,    -1,     3,    -1,    19,     6,     3,    -1
+      19,     7,    -1,     3,    -1,     3,     6,    19,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
@@ -505,8 +505,8 @@ static const yytype_uint8 yyr2[] =
 static const yytype_uint8 yydefact[] =
 {
        2,     0,     1,    15,     6,     7,     0,     3,     0,     4,
-       0,    12,     5,     0,     0,     0,     0,     0,     0,    14,
-       9,     8,    11,    10,    13,    16
+       0,     0,    12,     5,     0,     0,     0,     0,     0,    14,
+      16,     9,     8,    11,    10,    13
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
@@ -517,18 +517,18 @@ static const yytype_int8 yydefgoto[] =
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -9
+#define YYPACT_NINF -7
 static const yytype_int8 yypact[] =
 {
-      -9,    12,    -9,    -9,    -9,    -9,    -3,    -9,    14,    -9,
-       7,    -9,    -9,    -3,    -3,    -3,    -3,    -3,     0,    -9,
-      17,    17,    -8,    -8,    -8,    -9
+      -7,    13,    -7,     8,    -7,    -7,    15,    -7,    -5,    -7,
+      20,    -2,    -7,    -7,    15,    15,    15,    15,    15,    -7,
+      -7,    14,    14,     3,     3,     3
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -9,    -9,    -9,    -6,    -9,    -9
+      -7,    -7,    -7,    -6,    -7,    11
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -538,16 +538,16 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-      11,     4,     5,    25,    17,     6,     0,    20,    21,    22,
-      23,    24,     2,    18,    19,     3,     4,     5,     0,     0,
-       6,    12,    13,    14,    15,    16,    17,    15,    16,    17
+      12,     3,    13,    14,    15,    16,    17,    18,    21,    22,
+      23,    24,    25,     2,    11,    18,     3,     4,     5,     4,
+       5,     6,    20,     6,    16,    17,    18,    19
 };
 
-static const yytype_int8 yycheck[] =
+static const yytype_uint8 yycheck[] =
 {
-       6,     4,     5,     3,    12,     8,    -1,    13,    14,    15,
-      16,    17,     0,     6,     7,     3,     4,     5,    -1,    -1,
-       8,     7,     8,     9,    10,    11,    12,    10,    11,    12
+       6,     3,     7,     8,     9,    10,    11,    12,    14,    15,
+      16,    17,    18,     0,     6,    12,     3,     4,     5,     4,
+       5,     8,    11,     8,    10,    11,    12,     7
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -555,8 +555,8 @@ static const yytype_int8 yycheck[] =
 static const yytype_uint8 yystos[] =
 {
        0,    15,     0,     3,     4,     5,     8,    16,    17,    18,
-      19,    17,     7,     8,     9,    10,    11,    12,     6,     7,
-      17,    17,    17,    17,    17,     3
+      19,     6,    17,     7,     8,     9,    10,    11,    12,     7,
+      19,    17,    17,    17,    17,    17
 };
 
 #define yyerrok		(yyerrstatus = 0)
