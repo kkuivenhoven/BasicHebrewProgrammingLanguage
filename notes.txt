@@ -2,9 +2,29 @@
 [\u05E7\u05D5]       { yylval.stringVal = yytext; return STRING_DEC; }
 [a-z\u05D0-\u05EA]
 
+[קראטוןםפשדגכעיחלךףזסבהנמצתץ]+\s+(וק)       cout << " MATCHED: " << yytext << endl;
+(וק)\s+[קראטוןםפשדגכעיחלךףזסבהנמצתץ]+       cout << " MATCHED: " << yytext << endl;
+
+[קראטוןםפשדגכעיחלךףזסבהנמצתץ]+        { yylval.stringVal = yytext; return STRING_LITERAL; }
+
+(\u05D5\u05E7)\s+[קראטוןםפשדגכעיחלךףזסבהנמצתץ]+       cout << " MATCHED: " << yytext << endl;
 
 [^\b\u05D5][\u05E7\b]
+
+[\u05D5]{1}[\u05E7]{1}       cout << " MATCHED: " << yytext << endl;
+
+u05D0-u05EA
 
 
 %token STRING_DEC 
   | STRING_LITERAL ASSIGN STRING_LITERAL STRING_DEC { $$ = $3; }
+
+
+	| STRING_LITERAL str { $$ = $1; }
+
+
+	STRING_LITERAL { $$ = $1; }
+	| str STRING_LITERAL { $$ = $1; }
+	| STRING_LITERAL STRING_TYPE { $$ = $1; }
+	| STRING_LITERAL ASSIGN str { $$ = $3; }
+

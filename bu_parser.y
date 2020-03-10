@@ -73,7 +73,7 @@ exp:
         | exp MINUS exp		 		{ $$ = $1 - $3; }
 	| exp MULT exp 				{ $$ = $1 * $3; }
 	| exp DIV exp 				{ $$ = $1 / $3; }
-	| MINUS exp %prec NEG                   { $$ = -$2; }
+	| MINUS exp %prec NEG { $$ = -$2; }
 	| exp POW exp 				{ $$ = pow($1,$3); }
 	;
 
