@@ -1,4 +1,13 @@
 
+str:
+	STRING_LITERAL { $$ = $1; }
+	| str STRING_LITERAL { $$ = $1; }
+	| STRING_LITERAL STRING_TYPE { $$ = $1; }
+	| str ASSIGN STRING_LITERAL STRING_TYPE { $$ = $1; }
+	| str ASSIGN STRING_LITERAL { $$ = $1; }
+	;
+
+
 [\u05E7\u05D5]       { yylval.stringVal = yytext; return STRING_DEC; }
 [a-z\u05D0-\u05EA]
 
