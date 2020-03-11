@@ -1,3 +1,5 @@
+וק                                        { cout << " 2. found a key" << endl; return STRING_TYPE; }
+[קראטוןםפשדגכעיחלךףזסבהנמצתץ]+\s+וק                                        { cout << " 1. found a key" << endl; return STRING_TYPE; }
 
 str:
 	STRING_LITERAL { $$ = $1; }
@@ -24,6 +26,8 @@ str:
 
 u05D0-u05EA
 
+%token STRING_TYPE "וק"
+
 
 %token STRING_DEC 
   | STRING_LITERAL ASSIGN STRING_LITERAL STRING_DEC { $$ = $3; }
@@ -36,4 +40,5 @@ u05D0-u05EA
 	| str STRING_LITERAL { $$ = $1; }
 	| STRING_LITERAL STRING_TYPE { $$ = $1; }
 	| STRING_LITERAL ASSIGN str { $$ = $3; }
+
 

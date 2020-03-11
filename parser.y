@@ -3,7 +3,6 @@
 	#include <string>
 	#include <locale.h>
 	#include <math.h>
-	/* #define STRING_DEC "וק"*/
 
 	using namespace std;
 	extern "C" void yyerror(const char *s);
@@ -30,7 +29,7 @@
 	void yyerror(const char *s){
 		cerr << s << endl;
 	}
-	
+
 %}
 
 
@@ -84,6 +83,8 @@ str:
 	STRING_LITERAL { $$ = $1; }
 	| str STRING_LITERAL { $$ = $1; }
 	| STRING_LITERAL STRING_TYPE { $$ = $1; }
-	| str ASSIGN STRING_LITERAL STRING_TYPE { $$ = $1; }
+	| str ASSIGN STRING_LITERAL STRING_TYPE { 
+		$$ = $1; 
+	}
 	| str ASSIGN STRING_LITERAL { $$ = $1; }
 	;

@@ -1,4 +1,6 @@
+
 /* Definitions */
+/* may be helpful https://steemit.com/programming/@drifter1/writing-a-simple-compiler-on-my-own-symbol-table-basic-structure */
 %{
 	#include <iostream>
 	#include <string>
@@ -18,12 +20,10 @@
 ";"						{ return SEMI; }
 "="						{ return ASSIGN; }
 "^"						{ return POW; }
-וק                                        { cout << " 2. found a key" << endl; return STRING_TYPE; }
-[קראטוןםפשדגכעיחלךףזסבהנמצתץ]+\s+וק                                        { cout << " 1. found a key" << endl; return STRING_TYPE; }
+"וק"                                        { cout << " 2. found a key" << endl; return STRING_TYPE; }
 [קראטוןםפשדגכעיחלךףזסבהנמצתץ]+              { cout << " found a string: " << yytext << endl; yylval.stringVal = yytext; return STRING_LITERAL; }
 [-]\d					{ return NEG; }
 [\t\r\n\f]    ; /*	ignore whitespace */
 
 %%
 /* Code */
-
