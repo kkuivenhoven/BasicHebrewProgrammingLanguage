@@ -1,3 +1,6 @@
+/** read here 2.5.1 https://www.gnu.org/software/bison/manual/bison.html#Mfcalc-Declarations */
+
+
 וק                                        { cout << " 2. found a key" << endl; return STRING_TYPE; }
 [קראטוןםפשדגכעיחלךףזסבהנמצתץ]+\s+וק                                        { cout << " 1. found a key" << endl; return STRING_TYPE; }
 
@@ -42,3 +45,10 @@ u05D0-u05EA
 	| STRING_LITERAL ASSIGN str { $$ = $3; }
 
 
+
+
+useful noteS: https://quickgrid.blogspot.com/2016/08/Creating-a-Simple-Compiler-Symbol-Table-using-Hashing-Cpp-and-Explanation.html
+
+https://www.tutorialspoint.com/compiler_design/compiler_design_symbol_table.htm
+
+https://www.cs.uky.edu/~kwjoiner/cs441/proj/proj1.1/proj1.1.pdf
